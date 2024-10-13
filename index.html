@@ -5,13 +5,218 @@
   <meta charset="UTF-8" />
   <link rel="icon" type="image/svg+xml" href="/vite.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Vite App</title>
+  <title>RingTune App</title>
   <link rel="stylesheet" href="main.css">
 </head>
 
 <body>
 
-  <h1 class="bg-red-600 text-blue-800 font-semibold">Kakashi Hatake</h1>
+  <!-- header -->
+  <header
+    class="bg-gray-900 text-white px-10 py-5 sm:px-20 bg-[url('https://img.freepik.com/free-vector/glowing-musical-pentagram-background-with-sound-notes_1017-31220.jpg')] bg-cover">
+    <div class="flex justify-between items-center">
+      <h4 class="text-xl font-semibold">RingTunes</h4>
+      <a href="https://github.com/Dhanushmathan/Ringtune-App" target="_blank" class=" hover:text-blue-700">
+        <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 24 24" class="fill-current">
+          <path fill-rule="evenodd"
+            d="M12.006 2a9.85 9.85 0 0 0-6.484 2.44a10.32 10.32 0 0 0-3.393 6.17a10.48 10.48 0 0 0 1.317 6.955a10.05 10.05 0 0 0 5.4 4.418c.504.095.683-.223.683-.494c0-.245-.01-1.052-.014-1.908c-2.78.62-3.366-1.21-3.366-1.21a2.7 2.7 0 0 0-1.11-1.5c-.907-.637.07-.621.07-.621c.317.044.62.163.885.346c.266.183.487.426.647.71c.135.253.318.476.538.655a2.08 2.08 0 0 0 2.37.196c.045-.52.27-1.006.635-1.37c-2.219-.259-4.554-1.138-4.554-5.07a4.02 4.02 0 0 1 1.031-2.75a3.77 3.77 0 0 1 .096-2.713s.839-.275 2.749 1.05a9.26 9.26 0 0 1 5.004 0c1.906-1.325 2.74-1.05 2.74-1.05c.37.858.406 1.828.101 2.713a4.02 4.02 0 0 1 1.029 2.75c0 3.939-2.339 4.805-4.564 5.058a2.47 2.47 0 0 1 .679 1.897c0 1.372-.012 2.477-.012 2.814c0 .272.18.592.687.492a10.05 10.05 0 0 0 5.388-4.421a10.47 10.47 0 0 0 1.313-6.948a10.32 10.32 0 0 0-3.39-6.165A9.85 9.85 0 0 0 12.007 2Z"
+            clip-rule="evenodd" />
+        </svg>
+      </a>
+    </div>
+    <div class="text-center py-14 space-y-4">
+      <h3 class="text-2xl font-bold">Download <span class="text-blue-600">RingTunes</span> <br> <span class="text-xl">
+          in
+          Seconds...</span></h3>
+      <div class="relative max-w-lg mx-auto">
+        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24"
+          class="absolute text-gray-600 top-2 left-1.5 fill-current">
+          <path
+            d="M9.5 16q-2.725 0-4.612-1.888T3 9.5t1.888-4.612T9.5 3t4.613 1.888T16 9.5q0 1.1-.35 2.075T14.7 13.3l5.6 5.6q.275.275.275.7t-.275.7t-.7.275t-.7-.275l-5.6-5.6q-.75.6-1.725.95T9.5 16m0-2q1.875 0 3.188-1.312T14 9.5t-1.312-3.187T9.5 5T6.313 6.313T5 9.5t1.313 3.188T9.5 14" />
+        </svg>
+        <input type="text" placeholder="Search by artist, movie names, etc."
+          class="px-9 py-2 rounded outline-none w-full text-gray-600">
+      </div>
+    </div>
+  </header>
+
+  <main class="my-5 mx-5 space-y-4 sm:mx-10 sm:space-x-10 sm:flex sm:space-y-0">
+
+    <!-------You can hide the builder in mobile devices, Let's do a laptop device show-------->
+    <!-- Filters -->
+    <div class="bg-gray-200 p-5 rounded shadow space-y-4 w-full h-fit sm:max-w-sm">
+      <h4 class="font-semibold">Filters</h4>
+      <div class="space-y-4">
+        <select name="languages" id="languages" class="px-2 py-2 rounded w-full outline-none">
+          <option value="">Select Languages</option>
+          <option value="english">English</option>
+          <option value="tamil">Tamil</option>
+          <option value="chainesh">Malayalam</option>
+        </select>
+
+        <select name="artist" id="artist" class="px-2 py-2 rounded w-full outline-none">
+          <option value="">Select Artist</option>
+          <option value="aniruth-ravichandran">Anirudh Ravichandran</option>
+          <option value="harrish-jayaraj">Harris Jayaraj</option>
+          <option value="yuvan-shankar-raja">Yuvan Shankar Raja</option>
+          <option value="ar-rahman">AR Rahman</option>
+          <option value="vijay-antony">Vijay Antony</option>
+        </select>
+
+        <input type="text" placeholder="Movie Tittle" class="px-2 py-2 rounded w-full outline-none">
+        <button class="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white w-full font-semibold">Search</button>
+      </div>
+    </div>
+    <!-- Content -->
+    <div class="space-y-4">
+      <!-- Categories -->
+      <section>
+        <h1 class="font-semibold">Categories</h1>
+        <div class="flex items-center space-x-4 mt-3">
+          <div class="w-24 h-24 sm:w-40 sm:h-40 rounded bg-gray-400"></div>
+          <div class="w-24 h-24 sm:w-40 sm:h-40 rounded bg-gray-400"></div>
+          <div class="w-24 h-24 sm:w-40 sm:h-40 rounded bg-gray-400"></div>
+          <div class="w-24 h-24 sm:w-40 sm:h-40 rounded bg-gray-400"></div>
+        </div>
+      </section>
+      <!-- Browse by Languages -->
+      <section>
+        <h1 class="font-semibold">Browse by languages</h1>
+        <div class="flex items-center space-x-4 mt-3">
+          <div class="w-24 h-24 sm:w-40 sm:h-40 rounded bg-gray-400"></div>
+          <div class="w-24 h-24 sm:w-40 sm:h-40 rounded bg-gray-400"></div>
+          <div class="w-24 h-24 sm:w-40 sm:h-40 rounded bg-gray-400"></div>
+          <div class="w-24 h-24 sm:w-40 sm:h-40 rounded bg-gray-400"></div>
+        </div>
+      </section>
+
+      <!-- Popular Ringtunes -->
+      <section>
+        <h4 class="font-semibold">Popular Ringtones</h4>
+        <div class="grid sm:grid-cols-2 gap-4">
+          <div class="bg-gray-300 rounded p-3 mt-3">
+            <div class="flex space-x-2">
+              <!-- Left Content -->
+              <div class="">
+                <svg xmlns="http://www.w3.org/2000/svg" width="42" height="42" viewBox="0 0 24 24"
+                  class="text-blue-800 fill-current">
+                  <path
+                    d="m10.65 15.75l4.875-3.125q.35-.225.35-.625t-.35-.625L10.65 8.25q-.375-.25-.763-.038t-.387.663v6.25q0 .45.388.663t.762-.038M12 22q-2.075 0-3.9-.788t-3.175-2.137T2.788 15.9T2 12t.788-3.9t2.137-3.175T8.1 2.788T12 2t3.9.788t3.175 2.137T21.213 8.1T22 12t-.788 3.9t-2.137 3.175t-3.175 2.138T12 22m0-2q3.35 0 5.675-2.325T20 12t-2.325-5.675T12 4T6.325 6.325T4 12t2.325 5.675T12 20m0-8" />
+                </svg>
+              </div>
+              <!-- Right content -->
+              <div class="flex-1 relative">
+                <span
+                  class="absolute right-0 bg-blue-300 px-3 py-1 rounded font-semibold text-sm uppercase">Tamil</span>
+                <h4 class="font-semibold">Devara Ringtone</h4>
+                <small>Upload by Dhanushmathan</small>
+                <p class="text-sm"><strong>Music: </strong><a href="#" class="hover:text-blue-600">Anirudh
+                    Ravichandran</a></p>
+                <div class="pt-1">
+                  <span class="px-2 py-1 bg-blue-300 rounded text-sm font-medium">25 Sec</span>
+                  <span class="px-2 py-1 bg-blue-300 rounded text-sm font-medium">1.5 MB</span>
+                  <span class="px-2 py-1 bg-blue-300 rounded text-sm font-medium">250+</span>
+                </div>
+              </div>
+            </div>
+            <button
+              class="px-4 py-1 rounded bg-indigo-700 text-white w-full mt-4 hover:bg-indigo-800 font-semibold text-sm">Download
+              Now</button>
+          </div>
+          <div class="bg-gray-300 rounded p-3 mt-3">
+            <div class="flex space-x-2">
+              <!-- Left Content -->
+              <div class="">
+                <svg xmlns="http://www.w3.org/2000/svg" width="42" height="42" viewBox="0 0 24 24"
+                  class="text-blue-800 fill-current">
+                  <path
+                    d="m10.65 15.75l4.875-3.125q.35-.225.35-.625t-.35-.625L10.65 8.25q-.375-.25-.763-.038t-.387.663v6.25q0 .45.388.663t.762-.038M12 22q-2.075 0-3.9-.788t-3.175-2.137T2.788 15.9T2 12t.788-3.9t2.137-3.175T8.1 2.788T12 2t3.9.788t3.175 2.137T21.213 8.1T22 12t-.788 3.9t-2.137 3.175t-3.175 2.138T12 22m0-2q3.35 0 5.675-2.325T20 12t-2.325-5.675T12 4T6.325 6.325T4 12t2.325 5.675T12 20m0-8" />
+                </svg>
+              </div>
+              <!-- Right content -->
+              <div class="flex-1 relative">
+                <span
+                  class="absolute right-0 bg-blue-300 px-3 py-1 rounded font-semibold text-sm uppercase">Tamil</span>
+                <h4 class="font-semibold">Makkamishi Ringtone</h4>
+                <small>Upload by Dhanushmathan</small>
+                <p class="text-sm"><strong>Music: </strong><a href="#" class="hover:text-blue-600">Harris Jayaraj</a>
+                </p>
+                <div class="pt-1">
+                  <span class="px-2 py-1 bg-blue-300 rounded text-sm font-medium">25 Sec</span>
+                  <span class="px-2 py-1 bg-blue-300 rounded text-sm font-medium">1.5 MB</span>
+                  <span class="px-2 py-1 bg-blue-300 rounded text-sm font-medium">250+</span>
+                </div>
+              </div>
+            </div>
+            <button
+              class="px-4 py-1 rounded bg-indigo-700 text-white w-full mt-4 hover:bg-indigo-800 font-semibold text-sm">Download
+              Now</button>
+          </div>
+          <div class="bg-gray-300 rounded p-3 mt-3">
+            <div class="flex space-x-2">
+              <!-- Left Content -->
+              <div class="">
+                <svg xmlns="http://www.w3.org/2000/svg" width="42" height="42" viewBox="0 0 24 24"
+                  class="text-blue-800 fill-current">
+                  <path
+                    d="m10.65 15.75l4.875-3.125q.35-.225.35-.625t-.35-.625L10.65 8.25q-.375-.25-.763-.038t-.387.663v6.25q0 .45.388.663t.762-.038M12 22q-2.075 0-3.9-.788t-3.175-2.137T2.788 15.9T2 12t.788-3.9t2.137-3.175T8.1 2.788T12 2t3.9.788t3.175 2.137T21.213 8.1T22 12t-.788 3.9t-2.137 3.175t-3.175 2.138T12 22m0-2q3.35 0 5.675-2.325T20 12t-2.325-5.675T12 4T6.325 6.325T4 12t2.325 5.675T12 20m0-8" />
+                </svg>
+              </div>
+              <!-- Right content -->
+              <div class="flex-1 relative">
+                <span
+                  class="absolute right-0 bg-blue-300 px-3 py-1 rounded font-semibold text-sm uppercase">Tamil</span>
+                <h4 class="font-semibold">Rayan Ringtone (Usure Neethane)</h4>
+                <small>Upload by Dhanushmathan</small>
+                <p class="text-sm"><strong>Music: </strong><a href="#" class="hover:text-blue-600">AR Rahman</a></p>
+                <div class="pt-1">
+                  <span class="px-2 py-1 bg-blue-300 rounded text-sm font-medium">25 Sec</span>
+                  <span class="px-2 py-1 bg-blue-300 rounded text-sm font-medium">1.5 MB</span>
+                  <span class="px-2 py-1 bg-blue-300 rounded text-sm font-medium">250+</span>
+                </div>
+              </div>
+            </div>
+            <button
+              class="px-4 py-1 rounded bg-indigo-700 text-white w-full mt-4 hover:bg-indigo-800 font-semibold text-sm">Download
+              Now</button>
+          </div>
+          <div class="bg-gray-300 rounded p-3 mt-3">
+            <div class="flex space-x-2">
+              <!-- Left Content -->
+              <div class="">
+                <svg xmlns="http://www.w3.org/2000/svg" width="42" height="42" viewBox="0 0 24 24"
+                  class="text-blue-800 fill-current">
+                  <path
+                    d="m10.65 15.75l4.875-3.125q.35-.225.35-.625t-.35-.625L10.65 8.25q-.375-.25-.763-.038t-.387.663v6.25q0 .45.388.663t.762-.038M12 22q-2.075 0-3.9-.788t-3.175-2.137T2.788 15.9T2 12t.788-3.9t2.137-3.175T8.1 2.788T12 2t3.9.788t3.175 2.137T21.213 8.1T22 12t-.788 3.9t-2.137 3.175t-3.175 2.138T12 22m0-2q3.35 0 5.675-2.325T20 12t-2.325-5.675T12 4T6.325 6.325T4 12t2.325 5.675T12 20m0-8" />
+                </svg>
+              </div>
+              <!-- Right content -->
+              <div class="flex-1 relative">
+                <span
+                  class="absolute right-0 bg-blue-300 px-3 py-1 rounded font-semibold text-sm uppercase">Tamil</span>
+                <h4 class="font-semibold">GOAT Ringtone (Matta Song)</h4>
+                <small>Upload by Dhanushmathan</small>
+                <p class="text-sm"><strong>Music: </strong><a href="#" class="hover:text-blue-600">Yuvan Shankar
+                    Raja</a></p>
+                <div class="pt-1">
+                  <span class="px-2 py-1 bg-blue-300 rounded text-sm font-medium">25 Sec</span>
+                  <span class="px-2 py-1 bg-blue-300 rounded text-sm font-medium">1.5 MB</span>
+                  <span class="px-2 py-1 bg-blue-300 rounded text-sm font-medium">250+</span>
+                </div>
+              </div>
+            </div>
+            <button
+              class="px-4 py-1 rounded bg-indigo-700 text-white w-full mt-4 hover:bg-indigo-800 font-semibold text-sm">Download
+              Now</button>
+          </div>
+        </div>
+      </section>
+
+
+    </div>
+  </main>
+
+
 
 </body>
 
